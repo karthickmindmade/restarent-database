@@ -24,7 +24,7 @@ app.get('/api/customer/list', (req, res) => {
   }
   run().catch(console.dir);
 });
-app.post('/api/customer/new', (req, res) => {
+app.post('/api/customer/new',function(req,res){
   async function run() {
     try {
       await client.connect();
