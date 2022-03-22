@@ -34,10 +34,10 @@ app.post('/api/customer/new', (req, res) => {
       const doc = {
         Username: req.Username,
         Password: req.Password,
-        Email:req.Email,
-        Phonenumber:req.Phonenumber,
-        CreatedOn:req.Phonenumber,
-        CreatedBy:req.CreatedBy
+        Email: req.Email,
+        Phonenumber: req.Phonenumber,
+        CreatedOn: req.Phonenumber,
+        CreatedBy: req.CreatedBy
       }
       const result = await haiku.insertOne(doc);
       res.send({statusCode:200,message : `A document was inserted with the _id: ${result.insertedId}`});
