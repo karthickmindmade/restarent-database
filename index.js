@@ -32,12 +32,12 @@ app.post('/api/customer/new', (req, res) => {
       const haiku = database.collection("customers");
       // create a document to insert
       const doc = {
-        Username: JSON.stringify(req.Username),
-        Password: JSON.stringify(req.Password),
-        Email:JSON.stringify(req.Email),
-        Phonenumber:JSON.stringify(req.Phonenumber),
-        CreatedOn:JSON.stringify(req.Phonenumber),
-        CreatedBy:JSON.stringify(req.CreatedBy)
+        Username: req.Username,
+        Password: req.Password,
+        Email:req.Email,
+        Phonenumber:req.Phonenumber,
+        CreatedOn:req.Phonenumber,
+        CreatedBy:req.CreatedBy
       }
       const result = await haiku.insertOne(doc);
       res.send({statusCode:200,message : `A document was inserted with the _id: ${result.insertedId}`});
